@@ -4,9 +4,13 @@ import './App.css'
 function App() {
 let {product , loading,error}= usefetch('https://api.escuelajs.co/api/v1/products')
  console.log(product)
+ if (!loading == product ) {
+     return   <h1 className='bg bg-black h-screen grid justify-center items-center text-white'>loading</h1>;
+  }
+  if (error) {
+     return  <h1 className=' bg-black grid justify-center items-center text-white h-screen'>{error}</h1>;
 
-  
-
+  }
   return(
   <> 
 
@@ -26,14 +30,7 @@ let {product , loading,error}= usefetch('https://api.escuelajs.co/api/v1/product
 </div>
    ))}
   </div>
-
   </div>
-  {
-  loading ?
-    <h1 className='bg bg-black h-screen grid justify-center items-center text-white'>loading</h1>
-    :
-   <h1 className=' bg-black grid justify-center items-center text-white h-screen'>{error}</h1>
-  }
   </>
   )
 }
