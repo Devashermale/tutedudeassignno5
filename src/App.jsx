@@ -4,7 +4,7 @@ import './App.css'
 function App() {
 let {product , loading,error}= usefetch('https://api.escuelajs.co/api/v1/products')
  console.log(product)
- if (!loading == product ) {
+ if (!loading) {
      return   <h1 className='bg bg-black h-screen grid justify-center items-center text-white'>loading</h1>;
   }
   if (error) {
