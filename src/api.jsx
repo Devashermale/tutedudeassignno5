@@ -15,9 +15,12 @@ function usefetch(url) {
    seterror(err.message)
    
   }).finally(
+setTimeout(() => {
   setloading(false)
+    }, 2000);
   )
     },[])
     return {product,loading, error};
 }
+
 export default  usefetch
