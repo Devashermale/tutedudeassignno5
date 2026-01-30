@@ -17,10 +17,11 @@ function usefetch(url) {
   }).finally(
 setTimeout(() => {
   setloading(false)
-    }, 2000);
+    }, 2000)
   )
     },[])
     return {product,loading, error};
 }
 
 export default  usefetch
+
